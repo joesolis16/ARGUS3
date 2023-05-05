@@ -42,7 +42,6 @@ namespace arduinoGui
             this.panelInnerTemp = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.InTempNum = new System.Windows.Forms.Label();
             this.inTempBar = new System.Windows.Forms.PictureBox();
             this.inTempBarOutline = new System.Windows.Forms.PictureBox();
@@ -60,12 +59,13 @@ namespace arduinoGui
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.OutTempNum = new System.Windows.Forms.Label();
             this.outTempBar = new System.Windows.Forms.PictureBox();
             this.outTempBarOutline = new System.Windows.Forms.PictureBox();
             this.outTempLabel = new System.Windows.Forms.Label();
             this.serialGroupBox = new System.Windows.Forms.GroupBox();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.savelabel = new System.Windows.Forms.Label();
             this.serialTextBox = new System.Windows.Forms.RichTextBox();
             this.fireGroupBox = new System.Windows.Forms.GroupBox();
             this.numFireDetectLabel = new System.Windows.Forms.Label();
@@ -91,9 +91,9 @@ namespace arduinoGui
             this.panelHumidity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHumidity.Controls.Add(this.circularHumidityBar);
             this.panelHumidity.Controls.Add(this.labelHumidity);
-            this.panelHumidity.Location = new System.Drawing.Point(937, 427);
+            this.panelHumidity.Location = new System.Drawing.Point(1419, 505);
             this.panelHumidity.Name = "panelHumidity";
-            this.panelHumidity.Size = new System.Drawing.Size(235, 191);
+            this.panelHumidity.Size = new System.Drawing.Size(314, 268);
             this.panelHumidity.TabIndex = 0;
             // 
             // circularHumidityBar
@@ -101,12 +101,12 @@ namespace arduinoGui
             this.circularHumidityBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.circularHumidityBar.AnimationSpeed = 500;
             this.circularHumidityBar.BackColor = System.Drawing.Color.Transparent;
-            this.circularHumidityBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularHumidityBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.circularHumidityBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.circularHumidityBar.InnerColor = System.Drawing.Color.White;
             this.circularHumidityBar.InnerMargin = 2;
             this.circularHumidityBar.InnerWidth = -1;
-            this.circularHumidityBar.Location = new System.Drawing.Point(43, 32);
+            this.circularHumidityBar.Location = new System.Drawing.Point(48, 55);
             this.circularHumidityBar.MarqueeAnimationSpeed = 2000;
             this.circularHumidityBar.Name = "circularHumidityBar";
             this.circularHumidityBar.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -115,7 +115,7 @@ namespace arduinoGui
             this.circularHumidityBar.ProgressColor = System.Drawing.Color.Blue;
             this.circularHumidityBar.ProgressWidth = 25;
             this.circularHumidityBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularHumidityBar.Size = new System.Drawing.Size(159, 150);
+            this.circularHumidityBar.Size = new System.Drawing.Size(210, 199);
             this.circularHumidityBar.StartAngle = 90;
             this.circularHumidityBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.circularHumidityBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -134,7 +134,7 @@ namespace arduinoGui
             this.labelHumidity.AutoSize = true;
             this.labelHumidity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHumidity.ForeColor = System.Drawing.Color.Blue;
-            this.labelHumidity.Location = new System.Drawing.Point(83, 10);
+            this.labelHumidity.Location = new System.Drawing.Point(116, 12);
             this.labelHumidity.Name = "labelHumidity";
             this.labelHumidity.Size = new System.Drawing.Size(77, 19);
             this.labelHumidity.TabIndex = 0;
@@ -146,20 +146,19 @@ namespace arduinoGui
             this.panelInnerTemp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelInnerTemp.Controls.Add(this.label6);
             this.panelInnerTemp.Controls.Add(this.label5);
-            this.panelInnerTemp.Controls.Add(this.label2);
             this.panelInnerTemp.Controls.Add(this.InTempNum);
             this.panelInnerTemp.Controls.Add(this.inTempBar);
             this.panelInnerTemp.Controls.Add(this.inTempBarOutline);
             this.panelInnerTemp.Controls.Add(this.labelInnerTemp);
-            this.panelInnerTemp.Location = new System.Drawing.Point(937, 219);
+            this.panelInnerTemp.Location = new System.Drawing.Point(1419, 258);
             this.panelInnerTemp.Name = "panelInnerTemp";
-            this.panelInnerTemp.Size = new System.Drawing.Size(235, 189);
+            this.panelInnerTemp.Size = new System.Drawing.Size(314, 232);
             this.panelInnerTemp.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(85, 35);
+            this.label6.Location = new System.Drawing.Point(95, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 7;
@@ -168,47 +167,37 @@ namespace arduinoGui
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(85, 153);
+            this.label5.Location = new System.Drawing.Point(95, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "0 °C ";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(146, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 29);
-            this.label2.TabIndex = 5;
-            this.label2.Text = " °C";
-            // 
             // InTempNum
             // 
             this.InTempNum.AutoSize = true;
-            this.InTempNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InTempNum.Location = new System.Drawing.Point(112, 88);
+            this.InTempNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InTempNum.Location = new System.Drawing.Point(152, 107);
             this.InTempNum.Name = "InTempNum";
-            this.InTempNum.Size = new System.Drawing.Size(48, 29);
+            this.InTempNum.Size = new System.Drawing.Size(58, 33);
             this.InTempNum.TabIndex = 3;
             this.InTempNum.Text = "0.0";
             // 
             // inTempBar
             // 
             this.inTempBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.inTempBar.Location = new System.Drawing.Point(31, 66);
+            this.inTempBar.Location = new System.Drawing.Point(27, 107);
             this.inTempBar.Name = "inTempBar";
-            this.inTempBar.Size = new System.Drawing.Size(48, 100);
+            this.inTempBar.Size = new System.Drawing.Size(62, 109);
             this.inTempBar.TabIndex = 2;
             this.inTempBar.TabStop = false;
             // 
             // inTempBarOutline
             // 
             this.inTempBarOutline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.inTempBarOutline.Location = new System.Drawing.Point(31, 35);
+            this.inTempBarOutline.Location = new System.Drawing.Point(27, 34);
             this.inTempBarOutline.Name = "inTempBarOutline";
-            this.inTempBarOutline.Size = new System.Drawing.Size(48, 130);
+            this.inTempBarOutline.Size = new System.Drawing.Size(62, 182);
             this.inTempBarOutline.TabIndex = 1;
             this.inTempBarOutline.TabStop = false;
             // 
@@ -217,7 +206,7 @@ namespace arduinoGui
             this.labelInnerTemp.AutoSize = true;
             this.labelInnerTemp.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInnerTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelInnerTemp.Location = new System.Drawing.Point(55, 0);
+            this.labelInnerTemp.Location = new System.Drawing.Point(91, 0);
             this.labelInnerTemp.Name = "labelInnerTemp";
             this.labelInnerTemp.Size = new System.Drawing.Size(138, 20);
             this.labelInnerTemp.TabIndex = 0;
@@ -230,7 +219,7 @@ namespace arduinoGui
             this.tempHumChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.tempHumChart.Legends.Add(legend1);
-            this.tempHumChart.Location = new System.Drawing.Point(12, 232);
+            this.tempHumChart.Location = new System.Drawing.Point(12, 255);
             this.tempHumChart.Name = "tempHumChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
@@ -247,7 +236,7 @@ namespace arduinoGui
             this.tempHumChart.Series.Add(series1);
             this.tempHumChart.Series.Add(series2);
             this.tempHumChart.Series.Add(series3);
-            this.tempHumChart.Size = new System.Drawing.Size(919, 386);
+            this.tempHumChart.Size = new System.Drawing.Size(1364, 518);
             this.tempHumChart.TabIndex = 2;
             this.tempHumChart.Text = "chart1";
             title1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -269,7 +258,7 @@ namespace arduinoGui
             this.comportGroupBox.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comportGroupBox.Location = new System.Drawing.Point(12, 12);
             this.comportGroupBox.Name = "comportGroupBox";
-            this.comportGroupBox.Size = new System.Drawing.Size(249, 214);
+            this.comportGroupBox.Size = new System.Drawing.Size(249, 237);
             this.comportGroupBox.TabIndex = 3;
             this.comportGroupBox.TabStop = false;
             this.comportGroupBox.Text = "COM PORT SETTINGS";
@@ -278,7 +267,7 @@ namespace arduinoGui
             // 
             this.connectionLabel.AutoSize = true;
             this.connectionLabel.ForeColor = System.Drawing.Color.Red;
-            this.connectionLabel.Location = new System.Drawing.Point(118, 124);
+            this.connectionLabel.Location = new System.Drawing.Point(118, 144);
             this.connectionLabel.Name = "connectionLabel";
             this.connectionLabel.Size = new System.Drawing.Size(112, 20);
             this.connectionLabel.TabIndex = 7;
@@ -287,7 +276,7 @@ namespace arduinoGui
             // connectStatusLabel
             // 
             this.connectStatusLabel.AutoSize = true;
-            this.connectStatusLabel.Location = new System.Drawing.Point(28, 124);
+            this.connectStatusLabel.Location = new System.Drawing.Point(28, 144);
             this.connectStatusLabel.Name = "connectStatusLabel";
             this.connectStatusLabel.Size = new System.Drawing.Size(61, 20);
             this.connectStatusLabel.TabIndex = 6;
@@ -295,7 +284,7 @@ namespace arduinoGui
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(142, 172);
+            this.stopButton.Location = new System.Drawing.Point(142, 185);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(75, 36);
             this.stopButton.TabIndex = 5;
@@ -305,7 +294,7 @@ namespace arduinoGui
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(32, 172);
+            this.startButton.Location = new System.Drawing.Point(32, 185);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 36);
             this.startButton.TabIndex = 4;
@@ -319,7 +308,7 @@ namespace arduinoGui
             this.BaudRateBox.Items.AddRange(new object[] {
             "9600",
             "115200"});
-            this.BaudRateBox.Location = new System.Drawing.Point(122, 79);
+            this.BaudRateBox.Location = new System.Drawing.Point(123, 84);
             this.BaudRateBox.Name = "BaudRateBox";
             this.BaudRateBox.Size = new System.Drawing.Size(115, 28);
             this.BaudRateBox.TabIndex = 3;
@@ -327,7 +316,7 @@ namespace arduinoGui
             // comPortBox
             // 
             this.comPortBox.FormattingEnabled = true;
-            this.comPortBox.Location = new System.Drawing.Point(122, 35);
+            this.comPortBox.Location = new System.Drawing.Point(122, 40);
             this.comPortBox.Name = "comPortBox";
             this.comPortBox.Size = new System.Drawing.Size(116, 28);
             this.comPortBox.TabIndex = 2;
@@ -335,7 +324,7 @@ namespace arduinoGui
             // labelBaud
             // 
             this.labelBaud.AutoSize = true;
-            this.labelBaud.Location = new System.Drawing.Point(28, 82);
+            this.labelBaud.Location = new System.Drawing.Point(28, 87);
             this.labelBaud.Name = "labelBaud";
             this.labelBaud.Size = new System.Drawing.Size(72, 20);
             this.labelBaud.TabIndex = 1;
@@ -345,7 +334,7 @@ namespace arduinoGui
             // labelCOMPORT
             // 
             this.labelCOMPORT.AutoSize = true;
-            this.labelCOMPORT.Location = new System.Drawing.Point(28, 38);
+            this.labelCOMPORT.Location = new System.Drawing.Point(28, 43);
             this.labelCOMPORT.Name = "labelCOMPORT";
             this.labelCOMPORT.Size = new System.Drawing.Size(79, 20);
             this.labelCOMPORT.TabIndex = 0;
@@ -357,20 +346,19 @@ namespace arduinoGui
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.OutTempNum);
             this.panel1.Controls.Add(this.outTempBar);
             this.panel1.Controls.Add(this.outTempBarOutline);
             this.panel1.Controls.Add(this.outTempLabel);
-            this.panel1.Location = new System.Drawing.Point(937, 12);
+            this.panel1.Location = new System.Drawing.Point(1419, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(235, 184);
+            this.panel1.Size = new System.Drawing.Size(314, 228);
             this.panel1.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 153);
+            this.label4.Location = new System.Drawing.Point(95, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 6;
@@ -379,47 +367,37 @@ namespace arduinoGui
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 34);
+            this.label3.Location = new System.Drawing.Point(95, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "100 °C ";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(127, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = " °C";
-            // 
             // OutTempNum
             // 
             this.OutTempNum.AutoSize = true;
-            this.OutTempNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutTempNum.Location = new System.Drawing.Point(112, 78);
+            this.OutTempNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutTempNum.Location = new System.Drawing.Point(152, 96);
             this.OutTempNum.Name = "OutTempNum";
-            this.OutTempNum.Size = new System.Drawing.Size(48, 29);
+            this.OutTempNum.Size = new System.Drawing.Size(58, 33);
             this.OutTempNum.TabIndex = 3;
             this.OutTempNum.Text = "0.0";
             // 
             // outTempBar
             // 
             this.outTempBar.BackColor = System.Drawing.Color.Red;
-            this.outTempBar.Location = new System.Drawing.Point(31, 66);
+            this.outTempBar.Location = new System.Drawing.Point(27, 96);
             this.outTempBar.Name = "outTempBar";
-            this.outTempBar.Size = new System.Drawing.Size(48, 100);
+            this.outTempBar.Size = new System.Drawing.Size(62, 115);
             this.outTempBar.TabIndex = 2;
             this.outTempBar.TabStop = false;
             // 
             // outTempBarOutline
             // 
             this.outTempBarOutline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.outTempBarOutline.Location = new System.Drawing.Point(31, 36);
+            this.outTempBarOutline.Location = new System.Drawing.Point(27, 30);
             this.outTempBarOutline.Name = "outTempBarOutline";
-            this.outTempBarOutline.Size = new System.Drawing.Size(48, 130);
+            this.outTempBarOutline.Size = new System.Drawing.Size(62, 182);
             this.outTempBarOutline.TabIndex = 1;
             this.outTempBarOutline.TabStop = false;
             // 
@@ -428,7 +406,7 @@ namespace arduinoGui
             this.outTempLabel.AutoSize = true;
             this.outTempLabel.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outTempLabel.ForeColor = System.Drawing.Color.Red;
-            this.outTempLabel.Location = new System.Drawing.Point(54, 0);
+            this.outTempLabel.Location = new System.Drawing.Point(94, -1);
             this.outTempLabel.Name = "outTempLabel";
             this.outTempLabel.Size = new System.Drawing.Size(139, 20);
             this.outTempLabel.TabIndex = 0;
@@ -436,20 +414,41 @@ namespace arduinoGui
             // 
             // serialGroupBox
             // 
+            this.serialGroupBox.Controls.Add(this.saveButton);
+            this.serialGroupBox.Controls.Add(this.savelabel);
             this.serialGroupBox.Controls.Add(this.serialTextBox);
             this.serialGroupBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serialGroupBox.Location = new System.Drawing.Point(267, 12);
             this.serialGroupBox.Name = "serialGroupBox";
-            this.serialGroupBox.Size = new System.Drawing.Size(392, 214);
+            this.serialGroupBox.Size = new System.Drawing.Size(789, 237);
             this.serialGroupBox.TabIndex = 5;
             this.serialGroupBox.TabStop = false;
             this.serialGroupBox.Text = "Serial Output";
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(625, 117);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(121, 57);
+            this.saveButton.TabIndex = 2;
+            this.saveButton.Text = "SAVE";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // savelabel
+            // 
+            this.savelabel.AutoSize = true;
+            this.savelabel.Location = new System.Drawing.Point(598, 74);
+            this.savelabel.Name = "savelabel";
+            this.savelabel.Size = new System.Drawing.Size(181, 19);
+            this.savelabel.TabIndex = 1;
+            this.savelabel.Text = "Click to save raw data:";
+            // 
             // serialTextBox
             // 
-            this.serialTextBox.Location = new System.Drawing.Point(6, 25);
+            this.serialTextBox.Location = new System.Drawing.Point(6, 17);
             this.serialTextBox.Name = "serialTextBox";
-            this.serialTextBox.Size = new System.Drawing.Size(380, 183);
+            this.serialTextBox.Size = new System.Drawing.Size(586, 214);
             this.serialTextBox.TabIndex = 0;
             this.serialTextBox.Text = "";
             this.serialTextBox.TextChanged += new System.EventHandler(this.serialTextBox_TextChanged);
@@ -460,9 +459,9 @@ namespace arduinoGui
             this.fireGroupBox.Controls.Add(this.fireStatusLabel);
             this.fireGroupBox.Controls.Add(this.fireDetectLabel);
             this.fireGroupBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fireGroupBox.Location = new System.Drawing.Point(665, 12);
+            this.fireGroupBox.Location = new System.Drawing.Point(1073, 13);
             this.fireGroupBox.Name = "fireGroupBox";
-            this.fireGroupBox.Size = new System.Drawing.Size(266, 213);
+            this.fireGroupBox.Size = new System.Drawing.Size(328, 236);
             this.fireGroupBox.TabIndex = 6;
             this.fireGroupBox.TabStop = false;
             this.fireGroupBox.Text = "Fire Detection";
@@ -470,28 +469,28 @@ namespace arduinoGui
             // numFireDetectLabel
             // 
             this.numFireDetectLabel.AutoSize = true;
-            this.numFireDetectLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numFireDetectLabel.Location = new System.Drawing.Point(7, 151);
+            this.numFireDetectLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numFireDetectLabel.Location = new System.Drawing.Point(30, 184);
             this.numFireDetectLabel.Name = "numFireDetectLabel";
-            this.numFireDetectLabel.Size = new System.Drawing.Size(241, 16);
+            this.numFireDetectLabel.Size = new System.Drawing.Size(287, 19);
             this.numFireDetectLabel.TabIndex = 2;
             this.numFireDetectLabel.Text = "0 out of 4 Flame sensors detect a fire";
             // 
             // fireStatusLabel
             // 
             this.fireStatusLabel.AutoSize = true;
-            this.fireStatusLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fireStatusLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fireStatusLabel.ForeColor = System.Drawing.Color.Green;
-            this.fireStatusLabel.Location = new System.Drawing.Point(18, 82);
+            this.fireStatusLabel.Location = new System.Drawing.Point(68, 96);
             this.fireStatusLabel.Name = "fireStatusLabel";
-            this.fireStatusLabel.Size = new System.Drawing.Size(127, 32);
+            this.fireStatusLabel.Size = new System.Drawing.Size(143, 37);
             this.fireStatusLabel.TabIndex = 1;
             this.fireStatusLabel.Text = "NO FIRE";
             // 
             // fireDetectLabel
             // 
             this.fireDetectLabel.AutoSize = true;
-            this.fireDetectLabel.Location = new System.Drawing.Point(20, 35);
+            this.fireDetectLabel.Location = new System.Drawing.Point(70, 34);
             this.fireDetectLabel.Name = "fireDetectLabel";
             this.fireDetectLabel.Size = new System.Drawing.Size(217, 19);
             this.fireDetectLabel.TabIndex = 0;
@@ -505,7 +504,7 @@ namespace arduinoGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 630);
+            this.ClientSize = new System.Drawing.Size(1745, 785);
             this.Controls.Add(this.fireGroupBox);
             this.Controls.Add(this.serialGroupBox);
             this.Controls.Add(this.panel1);
@@ -531,6 +530,7 @@ namespace arduinoGui
             ((System.ComponentModel.ISupportInitialize)(this.outTempBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outTempBarOutline)).EndInit();
             this.serialGroupBox.ResumeLayout(false);
+            this.serialGroupBox.PerformLayout();
             this.fireGroupBox.ResumeLayout(false);
             this.fireGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -570,11 +570,11 @@ namespace arduinoGui
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label numFireDetectLabel;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label savelabel;
     }
 }
 

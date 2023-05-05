@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.IO;
 
 namespace arduinoGui
 {
@@ -22,6 +23,7 @@ namespace arduinoGui
         int iFlame;
         int iEnd;
         bool updateDataFlag = false;
+        
         public Form1()
         {
             InitializeComponent();
@@ -96,9 +98,9 @@ namespace arduinoGui
                     connectionLabel.Text = "DISCONNECTED";
                     connectionLabel.ForeColor = Color.Red;
 
-                    fireStatusLabel.Text = "NO FIRE";
-                    fireStatusLabel.ForeColor = Color.Green;
-                    numFireDetectLabel.Text = "0 out of 4 Flame sensors detect a fire";
+                    //fireStatusLabel.Text = "NO FIRE";
+                    //fireStatusLabel.ForeColor = Color.Green;
+                    //numFireDetectLabel.Text = "0 out of 4 Flame sensors detect a fire";
 
 
                     //updateDataFlag = false;
@@ -130,6 +132,7 @@ namespace arduinoGui
         {
             serialDataIn = serialPort1.ReadExisting();
             Data_Parse(serialDataIn);
+           
             this.BeginInvoke(new EventHandler(ShowData));
             
         }
@@ -167,12 +170,15 @@ namespace arduinoGui
             {
                 updateDataFlag = false;
             }
+            
          
         }
 
         private void ShowData(object sender, EventArgs e)
         {
+            
             serialTextBox.Text += serialDataIn;
+    
             //serialTextBox.Text += iIntTemp;
             //serialTextBox.Text += iHum;
             //serialTextBox.Text += intTemp;
@@ -185,31 +191,44 @@ namespace arduinoGui
                     fireStatusLabel.Text = "FIRE DETECTED";
                     fireStatusLabel.ForeColor = Color.Red;
                     numFireDetectLabel.Text = string.Format("{0} out of 4 Flame sensors detect a fire", numFlame.ToString());
+                    Application.DoEvents();
                 }
                 else
                 {
                     fireStatusLabel.Text = "NO FIRE";
                     fireStatusLabel.ForeColor = Color.Green;
                     numFireDetectLabel.Text = "0 out of 4 Flame sensors detect a fire";
+                    Application.DoEvents();
                 }
 
                 circularHumidityBar.Value = Convert.ToInt32(humidity);
                 circularHumidityBar.Text = string.Format("{0}%", humidity.ToString());
 
+                Application.DoEvents();
+
                 OutTempNum.Text = string.Format("{0} °C", outTemp.ToString());
-                outTempBar.Height = Convert.ToInt32(outTemp) * 130 / 100;
-                double otbLoc = outTempBarOutline.Height - (Convert.ToInt32(outTemp) * 130 / 100) + outTempBarOutline.Location.Y;
+                outTempBar.Height = Convert.ToInt32(outTemp) * 182 / 100;
+                double otbLoc = outTempBarOutline.Height - (Convert.ToInt32(outTemp) * 182 / 100) + outTempBarOutline.Location.Y;
                 outTempBar.Location = new Point(outTempBar.Location.X, Convert.ToInt32(otbLoc));
 
+                Application.DoEvents();
+
                 InTempNum.Text = string.Format("{0} °C", intTemp.ToString());
-                inTempBar.Height = Convert.ToInt32(intTemp) * 130 / 100;
-                double itbLoc = inTempBarOutline.Height - (Convert.ToInt32(intTemp) * 130 / 100) + inTempBarOutline.Location.Y;
+                inTempBar.Height = Convert.ToInt32(intTemp) * 182 / 100;
+                double itbLoc = inTempBarOutline.Height - (Convert.ToInt32(intTemp) * 182 / 100) + inTempBarOutline.Location.Y;
                 inTempBar.Location = new Point(inTempBar.Location.X, Convert.ToInt32(itbLoc));
+
+                
+                Application.DoEvents();
 
                 tempHumChart.Series["Humidity"].Points.Add(humidity);
                 tempHumChart.Series["Internal Temperature"].Points.Add(intTemp);
                 tempHumChart.Series["Outside Temperature"].Points.Add(outTemp);
+
+                Application.DoEvents();
             }
+
+            Application.DoEvents();
         }
 
         private void serialTextBox_TextChanged(object sender, EventArgs e)
@@ -218,9 +237,18 @@ namespace arduinoGui
             serialTextBox.ScrollToCaret();
         }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            TextWriter txt = new StreamWriter("C:\\Users\\joeso\\Desktop\\SDSU\\compe 491A\\rawdata.txt");
+            txt.Write(serialTextBox.Text);
+            txt.Close();
+        }
+
         private void labelInnerTemp_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }
